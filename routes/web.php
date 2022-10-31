@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Models\Brand;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,10 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     
     // Brand Routes
     Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
+    Route::controller(BrandController::class)->group(function(){
+        Route::get('brand/create','create');
+        Route::post('brand','store');
+    });
 
    
 });
