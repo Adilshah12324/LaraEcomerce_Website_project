@@ -14,15 +14,15 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Category</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">View category</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/category/create">Add Category</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/category">View category</a></li>
           </ul>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="/admin/brands">
           <i class="mdi mdi-view-headline menu-icon"></i>
-          <span class="menu-title">Form elements</span>
+          <span class="menu-title">Brands</span>
         </a>
       </li>
       <li class="nav-item">

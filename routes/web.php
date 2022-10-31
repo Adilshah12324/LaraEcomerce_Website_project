@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Admin\DashboardController;
+use Illuminate\Support\Facades\Route;
+// use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::put('category/{category}','update');
         Route::get('category/{id}','delete');
     });
+    
+    // Brand Routes
+    Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
+
    
 });
