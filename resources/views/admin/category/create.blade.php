@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>
-                    Category
+                    Create Category
                     <a href="{{url('admin/category')}}" class="btn btn-primary text-white btn-sm float-end">Back</a>
                 </h4>
             </div>
@@ -62,7 +62,7 @@
                         @enderror
                     </div>
                     <div class="col-md-12 mb-3">
-                        <button type="submit" class="btn btn-primary float-end">Submit</button>
+                        <button type="submit" class="btn btn-primary float-end">Save</button>
                     </div>
                 </form>
 
