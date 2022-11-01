@@ -26,6 +26,19 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basics" aria-expanded="false" aria-controls="ui-basics">
+          <i class="mdi mdi-plus-circle menu-icon"></i>
+          <span class="menu-title">Product</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basics">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Category</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/product">View category</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="pages/charts/chartjs.html">
           <i class="mdi mdi-chart-pie menu-icon"></i>
           <span class="menu-title">Charts</span>
