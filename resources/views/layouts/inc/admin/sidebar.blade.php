@@ -33,8 +33,8 @@
         </a>
         <div class="collapse" id="ui-basics">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Category</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/product">View category</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Brand</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/product">View Brand</a></li>
           </ul>
         </div>
       </li>

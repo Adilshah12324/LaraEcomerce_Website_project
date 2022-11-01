@@ -1,12 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-// use App\Http\Livewire\Admin\Brand\Index;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Models\Brand;
+use Illuminate\Support\Facades\Auth;
+// use App\Http\Livewire\Admin\Brand\Index;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,14 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('brand/{brand}/edit','edit');
         Route::put('brand/{brand}','update');
         Route::get('brand/{id}','delete');
+    });
+
+    // Product Routes
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('product','index');
+        Route::get('product/create','create');
+        Route::get('product','store');
+
     });
 
    
