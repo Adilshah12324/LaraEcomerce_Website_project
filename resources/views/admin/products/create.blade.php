@@ -12,7 +12,17 @@
                 </h4>
             </div>
             <div class="card-body">
-           <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
+                @if ($errors->any())
+                    <div class="alert alert-warning">
+                        @foreach ($errors->all() as $error)
+                            <div>{{$error}}</div>
+                            
+                        @endforeach
+
+                    </div>
+                    
+                @endif
+           <form action="{{url('admin/product')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -30,7 +40,7 @@
                       </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="tab-pane fade border p-3 show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         <div class="mb-3">
                             <label>Categories</label>
                             <select name="category_id" class="form-control">
@@ -45,7 +55,7 @@
                         </div>
                         <div class="mb-3">
                             <label>Product Slug</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="slug" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label>Select Brand</label>
@@ -64,7 +74,7 @@
                             <input type="text" name="description" class="form-control">
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="seotag-tab-pane" role="tabpanel" aria-labelledby="seotag-tab" tabindex="0">
+                    <div class="tab-pane fade border p-3" id="seotag-tab-pane" role="tabpanel" aria-labelledby="seotag-tab" tabindex="0">
                         <div class="mb-3">
                             <label>Meta Title</label>
                             <input type="text" name="meta_title" class="form-control">
@@ -79,7 +89,7 @@
 
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+                    <div class="tab-pane fade border p-3" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
@@ -102,23 +112,23 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label>Trending</label>
-                                    <input type="checkbox" name="trending" style="width: 50px; height: 50px;" class="form-control">
+                                    <input type="checkbox" name="trending" style="width: 50px; height: 50px;" >
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label>Status</label>
-                                    <input type="checkbox" name="status" style="width: 50px; height: 50px;" class="form-control">
+                                    <input type="checkbox" name="status" style="width: 50px; height: 50px;" >
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">
+                    <div class="tab-pane fade border p-3" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label>upload Product Image</label>
-                                    <input type="file" multiple name="image" class="form-control">
+                                    <input type="file" multiple name="image[]" class="form-control">
                                 </div>
                             </div>
                             

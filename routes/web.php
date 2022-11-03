@@ -1,11 +1,12 @@
 <?php
 
 use App\Models\Brand;
-use Illuminate\Support\Facades\Auth;
 // use App\Http\Livewire\Admin\Brand\Index;
+use App\PaymentService\PaypalApi;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -20,7 +21,8 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/adil', function (PaypalApi $ad) {
+    dump($ad->pay());
     return view('welcome');
 });
 
@@ -54,7 +56,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::controller(ProductController::class)->group(function(){
         Route::get('product','index');
         Route::get('product/create','create');
-        Route::get('product','store');
+        Route::post('product','store');
 
     });
 
