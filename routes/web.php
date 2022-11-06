@@ -21,8 +21,7 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/adil', function (PaypalApi $ad) {
-    dump($ad->pay());
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -57,6 +56,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('product','index');
         Route::get('product/create','create');
         Route::post('product','store');
+        Route::get('product/{product}/edit','edit');
+        Route::put('product/{product}','update');
+        Route::get('product-image/{product_image_id}/delete','destroyImage');
+        Route::get('product/{id}/delete','destroy');
+
+
 
     });
 
