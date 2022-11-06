@@ -6,6 +6,7 @@ use App\PaymentService\PaypalApi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -60,9 +61,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::put('product/{product}','update');
         Route::get('product-image/{product_image_id}/delete','destroyImage');
         Route::get('product/{id}/delete','destroy');
+    });
 
-
-
+    // color Routes
+    Route::controller(ColorController::class)->group(function(){
+        Route::get('color','index');
+        Route::get('color/create','create');
+        Route::post('color/create','store');
+        Route::get('color/{color}/edit','edit');
+        Route::put('color/{color}','update');
+        Route::get('color/{id}/delete','destroy');
     });
 
    

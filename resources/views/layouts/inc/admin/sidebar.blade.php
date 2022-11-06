@@ -26,6 +26,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/admin/color">
+          <i class="mdi mdi-view-headline menu-icon"></i>
+          <span class="menu-title">Colors</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basics" aria-expanded="false" aria-controls="ui-basics">
           <i class="mdi mdi-plus-circle menu-icon"></i>
           <span class="menu-title">Product</span>
@@ -33,8 +39,8 @@
         </a>
         <div class="collapse" id="ui-basics">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Brand</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/product">View Brand</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/product/create">Add Product</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/product">View Product</a></li>
           </ul>
         </div>
       </li>
