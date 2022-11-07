@@ -87,7 +87,9 @@ class ProductController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
         $product = Product::find($id);
-        return view('admin.products.edit',compact('product','categories','brands'));
+        $product_color = $product->productColors->pluck('color_id')->toArray();
+        $colors = Color::whereNotIn('id',$product_color)->get();
+        return view('admin.products.edit',compact('product','categories','brands','colors'));
         
 
         # code...
@@ -165,6 +167,16 @@ class ProductController extends Controller
 
 
         }
+        # code...
+    }
+    public function updateProdColorQty(Request $request, $prod_color_id)
+    {
+        
+        $productColorData = Product::findOrFail($request->product_id)->productColors()->where('id',$prod_color_id)->first();
+        $productColorData->update([
+            'quantity' =>$request->qty,
+        ]);
+        return response()->json(['message'=>'Product Colors Qty Updated']);
         # code...
     }
    
