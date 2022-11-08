@@ -10,6 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>
+                       
                         Brand List
                         <a href="{{url('admin/brand/create')}}" class="btn btn-primary btn-sm float-end">Add Brand</a>
                     </h4>
