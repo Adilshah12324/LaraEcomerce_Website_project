@@ -28,6 +28,7 @@ class CategoryController extends Controller
         $category->name = $categoryData['name'];
         $category->slug = Str::slug($categoryData['slug']);
         $category->description = $categoryData['description'];
+        
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();

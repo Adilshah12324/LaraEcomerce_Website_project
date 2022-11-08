@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -72,6 +73,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('color/{color}/edit','edit');
         Route::put('color/{color}','update');
         Route::get('color/{id}/delete','destroy');
+    });
+
+       // slider Routes
+       Route::controller(SliderController::class)->group(function(){
+        Route::get('slider','index');
+        Route::get('slider/create','create');
+        Route::post('slider/create','store');
+        Route::get('slider/{slider}/edit','edit');
+        Route::put('slider/{slider}','update');
+        Route::get('slider/{id}/delete','destroy');
     });
 
    

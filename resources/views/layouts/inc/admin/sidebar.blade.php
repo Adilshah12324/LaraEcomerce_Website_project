@@ -45,9 +45,9 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/charts/chartjs.html">
-          <i class="mdi mdi-chart-pie menu-icon"></i>
-          <span class="menu-title">Charts</span>
+        <a class="nav-link" href="/admin/slider">
+          <i class="mdi mdi-view-carousel menu-icon"></i>
+          <span class="menu-title">Home Slider</span>
         </a>
       </li>
       <li class="nav-item">
