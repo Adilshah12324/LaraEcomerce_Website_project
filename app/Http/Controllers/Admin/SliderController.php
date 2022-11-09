@@ -27,12 +27,13 @@ class SliderController extends Controller
         $validatedData = $request->validated();
         $slider = new Slider();
 
+        $uploadPath = 'uploads/slider/';
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
             $a = $file->move('uploads/slider/',$filename);
-            $slider->image = $filename;
+            $slider->image = $uploadPath.$filename;
         }
 
         $slider->title = $validatedData['title'];
@@ -53,6 +54,8 @@ class SliderController extends Controller
     {
         $validatedData = $request->validated();
         $slider = Slider::find($id);
+        $uploadPath = 'uploads/slider/';
+
         if ($request->hasFile('image')) {
             $path = 'uploads/slider/'.$slider->image;
             if (File::exists($path)) {
@@ -63,7 +66,7 @@ class SliderController extends Controller
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
             $a = $file->move('uploads/slider/',$filename);
-            $slider->image = $filename;
+            $slider->image = $uploadPath.$filename;
         }
 
         $slider->title = $validatedData['title'];
