@@ -7,18 +7,28 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
     
     
+
         
     <div class="carousel-inner">
-        @foreach ($sliders as $key => $slider)
+        @foreach($sliders as $key => $slider)
       <div class="carousel-item {{ $key == 0 ? 'active':''}}">
         @if ($slider->image)
         <img src="{{asset("$slider->image")}}" class="d-block w-100" alt="...">
         @endif
-        <div class="carousel-caption d-none d-md-block">
-         
-          <h5 style="color: black">{{$slider->title}}</h5>
-          <p>{{$slider->description}}</p>
-        </div>
+        
+        <div class="custom-carousel-content">
+                        <h1>
+                            {{$slider->title}}
+                        </h1>
+                        <p>
+                            {{$slider->description}}
+                        </p>
+                        <div>
+                            <a href="#" class="btn btn-slider">
+                                Get Now
+                            </a>
+                        </div>
+                    </div>
       </div>
       @endforeach
     
