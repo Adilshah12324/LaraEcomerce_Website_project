@@ -30,13 +30,10 @@
                     <div class="product-card">
                         <div class="product-card-img">
                             @if($product->quantity > 0){
-
                                 <label class="stock bg-success">In Stock</label>
-
                             }
                             @else{
                                 <label class="stock bg-danger">Out of Stock</label>
-
                             }
                             @endif
 
@@ -57,19 +54,15 @@
                                 <span class="selling-price">${{$product->selling_price}}</span>
                                 <span class="original-price">${{$product->original_price}}</span>
                             </div>
-                           
                         </div>
                     </div>
                 </div>
                 @empty
                 <div class="col-md-12">
                     <div class="p-2">
-
                         <h2>No Product Available for {{$category->name}}</h2>
                     </div>
-
                 </div>
-
                 @endforelse
 
             </div>

@@ -15,6 +15,15 @@
             <form action="{{url('admin/brand/'.$brand->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                <div class="col-md-6 mb-3">
+                    <label>Categories</label>
+                    <select name="category_id" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}" {{$category->id == $brand->category_id ? 'selected':''}}>
+                                {{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
                     <div class="col-md-6 mb-3">
                         <label>Name</label>
                         <input type="text" name="name" value="{{$brand->name}}" class="form-control">

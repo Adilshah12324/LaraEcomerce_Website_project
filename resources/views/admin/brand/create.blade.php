@@ -14,6 +14,16 @@
             <div class="card-body">
             <form action="{{url('admin/brand')}}" method="post">
                 @csrf
+                <div class="mb-3">
+                    <label>Categories</label>
+                    <select name="category_id" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('name') <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
                     <div class="col-md-6 mb-3">
                         <label>Name</label>
                         <input type="text" name="name" class="form-control">
