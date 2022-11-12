@@ -6,6 +6,9 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
+use App\Models\Wishlist;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
@@ -37,13 +40,18 @@ class FrontendController extends Controller
     public function productView($category_slug,$product_slug)
     {
         $category = Category::where('slug',$category_slug)->first();
+      
 
         if ($category) {
             $product = $category->product()->where('slug',$product_slug)->where('status','0')->first();
 
             if ($product) {
-        
-
+                  // show count wish start
+                    $wishCount = Wishlist::where('user_id',Auth::id())->count();
+                    if ($wishCount) {
+                        return view('layouts.inc.frontend.navbar',compact('wishCount'));
+                    }
+                    // show count wish start
                 return view('frontend.collections.products.view',compact('product','category'));
                 
             }
@@ -59,4 +67,6 @@ class FrontendController extends Controller
 
         # code...
     }
+
+    
 }

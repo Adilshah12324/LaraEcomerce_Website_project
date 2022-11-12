@@ -17,9 +17,15 @@
 
 @section('content')
     <div>
+         
         <div>
+           
             <div class="py-3 py-md-5">
                 <div class="container">
+                    <!-- {{$wishCount}} -->
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
+                    @endif
                     <div class="row">
                         <div class="col-md-5 mt-3">
                             <div class="bg-white border">
@@ -44,7 +50,7 @@
                                     @if ($product->productColors->count() > 0)
                                         @if ($product->productColors)
                                             @foreach ($product->productColors as $item)
-                                                {{-- <input type="radio" name="colorSection" value="{{$item->id}}" > {{$item->color->name}} --}}
+                                                 <input type="radio" name="colorSection" value="{{$item->id}}" > {{$item->color->name}}
                                                 <label class="colorSelectionLabel" style="background-color: {{$item->color->code}}">
                                                     {{$item->color->name}}
                                                 </label>
@@ -69,7 +75,7 @@
                                 </div>
                                 <div class="mt-2">
                                     <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
-                                    <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
+                                    <a href="{{url('collections-wishlist/'.$product->id)}}" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
                                 </div>
                                 <div class="mt-3">
                                     <h5 class="mb-0">Small Description</h5>
