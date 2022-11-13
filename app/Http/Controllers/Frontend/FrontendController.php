@@ -48,11 +48,11 @@ class FrontendController extends Controller
             if ($product) {
                   // show count wish start
                     $wishCount = Wishlist::where('user_id',Auth::id())->count();
-                    if ($wishCount) {
-                        return view('layouts.inc.frontend.navbar',compact('wishCount'));
-                    }
+                    // if ($wishCount) {
+                    //     return view('layouts.inc.frontend.navbar',compact('wishCount'));
+                    // }
                     // show count wish start
-                return view('frontend.collections.products.view',compact('product','category'));
+                return view('frontend.collections.products.view',compact('product','category','wishCount'));
                 
             }
             else{

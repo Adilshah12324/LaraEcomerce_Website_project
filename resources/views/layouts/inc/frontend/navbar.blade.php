@@ -1,9 +1,13 @@
+@php
+    $wishCount = App\Models\Wishlist::where('user_id',Auth::id())->count();
+@endphp
+
 <div class="main-navbar shadow-sm sticky-top">
         <div class="top-navbar">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                        <h5 class="brand-name">Funda Ecom</h5>
+                        <h5 class="brand-name">Lootlo Ecomerce</h5>
                     </div>
                     <div class="col-md-5 my-auto">
                         <form role="search">
@@ -25,8 +29,8 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/wishlist">
-                                    {{$wishCount}}
-                                    <i class="fa fa-heart"></i> Wishlist (0)
+                                    
+                                    <i class="fa fa-heart"></i> Wishlist ({{$wishCount}})
                                 </a>
                             </li>
                             @guest

@@ -22,7 +22,7 @@
            
             <div class="py-3 py-md-5">
                 <div class="container">
-                    <!-- {{$wishCount}} -->
+                
                     @if (session('message'))
                         <div class="alert alert-success">{{session('message')}}</div>
                     @endif
