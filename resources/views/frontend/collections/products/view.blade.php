@@ -68,9 +68,11 @@
                                 </div>
                                 <div class="mt-2">
                                     <div class="input-group">
-                                        <span class="btn btn1"><i class="fa fa-minus"></i></span>
-                                        <input type="text" value="1" class="input-quantity" />
-                                        <span class="btn btn1"><i class="fa fa-plus"></i></span>
+                                        <p>
+                                            <button class="btn btn-sm btn-primary" onclick="totalClick(1)"><i class="fa fa-minus"></i></button>
+                                                <span class="px-3" id="totalClicks" style="border:solid 1px ;">0</span>
+                                            <button class="btn btn-sm btn-primary" onclick="totalClick(1)" ><i class="fa fa-plus"></i></button>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="mt-2">
